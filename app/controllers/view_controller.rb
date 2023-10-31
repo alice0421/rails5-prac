@@ -54,4 +54,44 @@ class ViewController < ApplicationController
         @book = Book.new(publish: '技術評論社')
         @books = Book.select(:publish).distinct
     end
+
+    def simple_format
+        
+    end
+
+    def truncate
+        
+    end
+
+    def excerpt
+        
+    end
+
+    def highlight
+        
+    end
+
+    def conc
+        @books = Book.all()
+    end
+
+    def h_escape
+        @msg = '<p>こんにちは</p>'
+    end
+
+    def sanitize
+
+    end
+
+    def format
+        
+    end
+
+    def number_to
+        
+    end
+
+    def datetime
+        
+    end
 end
