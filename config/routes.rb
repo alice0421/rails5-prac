@@ -6,34 +6,40 @@ Rails.application.routes.draw do
   resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'hello/index'
-  get 'hello/view'
-  get 'hello/list'
+  namespace :hello do
+      get 'index'  # get 'hello/index'
+      get 'view' # get 'hello/view'
+      get 'list' # get 'hello/list'
+  end
 
-  post 'keyword/search'
+  namespace :keyword do
+    post 'search'
+  end
   
-  get 'view/keyword'
-  get 'view/form_tag'
-  patch 'view/create'
-  get 'view/form_for'
-  get 'view/field'
-  get 'view/html5'
-  get 'view/select'
-  get 'view/col_select'
-  get 'view/group_select'
-  get 'view/select_tag'
-  get 'view/col_select2'
-  get 'view/group_select2'
-  get 'view/dat_select'
-  get 'view/col_radio'
-  get 'view/simple_format'
-  get 'view/truncate'
-  get 'view/excerpt'
-  get 'view/highlight'
-  get 'view/conc'
-  get 'view/h_escape'
-  get 'view/sanitize'
-  get 'view/format'
-  get 'view/number_to'
-  get 'view/datetime'
+  namespace :view do
+    get 'keyword'
+    get 'form_tag'
+    patch 'create'
+    get 'form_for'
+    get 'field'
+    get 'html5'
+    get 'select'
+    get 'col_select'
+    get 'group_select'
+    get 'select_tag'
+    get 'col_select2'
+    get 'group_select2'
+    get 'dat_select'
+    get 'col_radio'
+    get 'simple_format'
+    get 'truncate'
+    get 'excerpt'
+    get 'highlight'
+    get 'conc'
+    get 'h_escape'
+    get 'sanitize'
+    get 'format'
+    get 'number_to'
+    get 'datetime'
+  end
 end
