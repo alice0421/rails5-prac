@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'login/index'
   resources :books
   resources :fan_comments
   resources :reviews
