@@ -1,0 +1,35 @@
+<%= form_tag(action: :create) do %>
+    <div class="field">
+        <%= label :book, :isbn %>
+        <%= text_field :book, :isbn, size: 25 %>
+    </div>
+    <br />
+    <div class="field">
+        <%= label :book, :title %>
+        <%= text_field :book, :title, size: 25 %>
+    </div>
+    <br />
+    <div class="filed">
+        <%= label :book, :price %>
+        <%= text_field :book, :price, size: 25 %>
+    </div>
+    <br />
+    <div class="filed">
+        <%= label :book, :publish %>
+        <%= text_field :book, :publish, size: 25 %>
+    </div>
+    <br />
+    <div class="filed">
+        <%= label :book, :published %>
+        <%= text_field :book, :published, size: 25 %>
+    </div>
+    <br />
+    <div class="filed">
+        <%= label :book, :dl %>
+        <%= text_field :book, :dl, size: 25 %>
+    </div>
+    <br />
+    <div class="actions">
+        <%= submit_tag '登録' %>
+    </div>
+<% end %>

@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ] # %iはシンボル（:show）の配列を作り出す
-  # before_action :set_book, only: [ :show, :edit, :update, :destroy ] と同じ意味
+  before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
   def index
@@ -26,12 +25,9 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        # book_url(@book)は、@book、book_path(@book)と同じ。
-        # noticeという名前はrails依存なので変更不可。
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
         format.json { render :show, status: :created, location: @book }
       else
-        # render 'new' は部分テンプレートの呼び出し、render :new はテンプレートの呼び出し
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end

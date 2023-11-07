@@ -1,0 +1,61 @@
+<%= form_for(@book) do |form| %>
+    <p>テキストボックス</p>
+    <%= form.text_field :isbn, size: 20, maxlength: 25, readonly: true %>
+    <br />
+    
+    <p>パスワードボックス</p>
+    <%= form.password_field :isbn, size: 10, maxlength: 15, disabled: true %>
+    <br />
+    
+    <p>テキストエリア</p>
+    <%= form.text_area :isbn, cols: 40, rows: 10, style: "resize: none;" %>
+    <br />
+    
+    <p>ラジオボタン</p>
+    <label><%= form.radio_button :publish, '技術評論社', class: :rd %>技術評論社</label>
+    <label><%= form.radio_button :publish, '翔泳社', class: :rd %>翔泳社</label>
+    <label><%= form.radio_button :publish, '日経BP社', class: :rd %>日経BP社</label>
+    <br />
+    
+    <p>チェックボックス</p>
+    <label><%= form.check_box :dl, {class: 'cnk'}, 'yes', 'no' %>ダウンロードサンプルあり？</label>
+    <br />
+    
+    <p>ファイル入力ボックス</p>
+    <%= form.file_field :isbn, size: 10, maxlength: 15 %>
+    <br />
+    
+    <p>隠しフィールド</p>
+    <%= form.hidden_field :isbn %>
+    <br />
+<% end %>
+
+<br />
+<p>【fields_for】</p>
+<%= form_for(@user, url: { action: :create }) do |form| %>
+    <div class='field'>
+        <%= form.label :username, 'ユーザー名：' %>
+        <%= form.text_field :username %>
+    </div>
+    <br />
+    <div class='field'>
+        <%= form.label :email, 'メールアドレス：' %>
+        <%= form.text_field :email %>
+    </div>
+    <br />
+    <!-- サブフォームが作成されるだけで、formタグによるデータの送り先URLは大元と同じ。 -->
+    <%= field_set_tag '著作情報' do %>
+        <!-- models/user.erbとmodels/author.erbで、usersとauthorsテーブルのアソシエーションを記述すること。 -->
+        <%= fields_for @user.author do |another_form| %>
+            <div class="field">
+                <%= another_form.label :name, '著者名：' %>
+                <%= another_form.text_field :name %>
+                <br /><br />
+                <%= another_form.label :birth, '誕生日：' %>
+                <%= another_form.text_field :birth %>
+            </div>
+        <% end %>
+    <% end %>
+    <br />
+    <%= form.submit '登録' %>
+<% end %>

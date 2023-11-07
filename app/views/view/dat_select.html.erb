@@ -1,0 +1,9 @@
+<%= form_for(@book) do |form| %>
+    <p>date_select</p>
+    <!-- date_selectはデフォルトで月を英語表記する。use_month_numbers: trueで数値化 -->
+    <%= form.date_select :published, use_month_numbers: true %>
+<% end %>
+
+<br />
+<p>select_date</p>
+<%= select_date Date.current, use_month_numbers: true %>

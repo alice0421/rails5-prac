@@ -1,0 +1,4 @@
+<%= form_for(@review) do |form| %>
+    <!-- models/author.rbとmodels/book.rbに、authorsとbooksのアソシエーションを記述しないと動かないの注意！ -->
+    <%= form.grouped_collection_select :book_id, @authors, :books, :name, :id, :title %>
+<% end %>

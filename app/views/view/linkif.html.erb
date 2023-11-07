@@ -1,0 +1,24 @@
+<% @user = User.new %>
+<%# @userが存在しなければURLを、存在すれば'ログイン'という文字列のみ返す %>
+<%= link_to_if @user, 'ログイン',
+    controller: :login, action: :index %>
+
+<br />
+
+<%# @userが存在すればURLを、存在しなければ'ログイン'という文字列のみ返す %>
+<%= link_to_if @user.nil?, 'ログイン',
+    controller: :login, action: :index %>
+
+<br />
+
+<%# @userが存在しなければURLを、存在すれば'ログイン'という文字列のみ返す %>
+<%= link_to_unless @user, 'ログイン',
+    controller: :login, action: :index %>
+
+<br />
+
+<%# ブロックのnameは、'ログイン'というリンクテキストを持っている %>
+<%= link_to_if @user.nil?, 'ログイン',
+    controller: :login, action: :index do |name|
+    link_to 'マイページ', controller: :login, action: :info
+    end %>

@@ -1,0 +1,13 @@
+<% msg = '<strong>Rails</strong>はRubyベースのフレームワークです。Railsに影響を受けたフレームワークには、Catalystやsumfonyなどがあります。' %>
+
+<%= truncate(msg, length: 50) %>
+
+<br />
+
+<%= truncate(msg, { length: 50, separator: '。' }) %>
+<%# truncate(msg, length: 50, separator: '。') %>
+
+<br />
+
+<%= truncate(msg, { length: 50, omission: '...後略...' }) %>
+<%# truncate(msg, length: 50, omission: '...後略...') %>

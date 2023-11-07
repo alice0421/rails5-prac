@@ -1,0 +1,5 @@
+<%= form_for(@book) do |form| %>
+    <%= form.collection_check_boxes :publish, @books, :publish, :publish %>
+    <br />
+    <%= form.collection_radio_buttons :publish, @books, :publish, :publish %>
+<% end %>
