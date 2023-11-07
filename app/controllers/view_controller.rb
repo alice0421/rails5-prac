@@ -118,4 +118,8 @@ class ViewController < ApplicationController
     def mailto
         
     end
+
+    def helper
+        
+    end
 end

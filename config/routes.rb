@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     get 'current'
     get 'detail'
     get 'mailto'
+    get 'helper'
   end
 
   namespace :members do
