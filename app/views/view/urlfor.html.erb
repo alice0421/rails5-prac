@@ -1,0 +1,14 @@
+<%= url_for(action: :new) %>
+
+<br />
+
+<%= url_for(controller: :books, action: :show, id: 5, anchor: 'rails', charset: 'utf8') %>
+
+<br />
+
+<% @book = Book.find(1) %>
+<%= url_for(@book) %>
+
+<br />
+
+<%= url_for(:back) %>

@@ -94,4 +94,28 @@ class ViewController < ApplicationController
     def datetime
         
     end
+
+    def link
+
+    end
+
+    def urlfor
+        
+    end
+
+    def linkif
+
+    end
+
+    def current
+        
+    end
+
+    def detail
+        
+    end
+
+    def mailto
+        
+    end
 end

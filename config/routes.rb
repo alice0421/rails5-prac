@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'login/index'
   resources :books
   resources :fan_comments
   resources :reviews
@@ -41,5 +42,21 @@ Rails.application.routes.draw do
     get 'format'
     get 'number_to'
     get 'datetime'
+    get 'link'
+    get 'urlfor'
+    get 'new'
+    get 'linkif'
+    get 'current'
+    get 'detail'
+    get 'mailto'
+  end
+
+  namespace :members do
+    post 'login'
+  end
+
+  namespace :login do
+    get 'index'
+    get 'info'
   end
 end
