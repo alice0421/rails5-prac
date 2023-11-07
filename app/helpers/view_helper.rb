@@ -1,6 +1,6 @@
 module ViewHelper
-    datetime: 整形対象の日付時刻値（Timeオブジェクト）
-    tyoe: 出力形式（日付時刻: datetime、日付のみ: date、時刻のみ: time）
+    # datetime: 整形対象の日付時刻値（Timeオブジェクト）
+    # type: 出力形式（日付時刻: datetime、日付のみ: date、時刻のみ: time）
     def format_datetime(datetime, type = :datetime)
         # 引数がdatetimeがnilの場合は空文字を返す
         return '' unless datetime
